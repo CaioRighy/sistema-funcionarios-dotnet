@@ -1,0 +1,15 @@
+C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.csproj.AssemblyReference.cache
+C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.Properties.Resources.resources
+C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.csproj.GenerateResource.cache
+C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.csproj.CoreCompileInputs.cache
+C:\Users\fabri\source\repos\SistemaFuncionarios\bin\Debug\SistemaFuncionarios.exe.config
+C:\Users\fabri\source\repos\SistemaFuncionarios\bin\Debug\SistemaFuncionarios.exe
+C:\Users\fabri\source\repos\SistemaFuncionarios\bin\Debug\SistemaFuncionarios.pdb
+C:\Users\fabri\source\repos\SistemaFuncionarios\bin\Debug\EntityFramework.dll
+C:\Users\fabri\source\repos\SistemaFuncionarios\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\fabri\source\repos\SistemaFuncionarios\bin\Debug\EntityFramework.xml
+C:\Users\fabri\source\repos\SistemaFuncionarios\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaF.10146755.Up2Date
+C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.exe
+C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.pdb
+C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.exe.config
