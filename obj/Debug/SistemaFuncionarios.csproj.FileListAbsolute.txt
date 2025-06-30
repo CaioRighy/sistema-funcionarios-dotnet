@@ -13,3 +13,5 @@ C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaF.10146755.Up2D
 C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.exe
 C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.pdb
 C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.exe.config
+C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.FormPrincipal.resources
+C:\Users\fabri\source\repos\SistemaFuncionarios\obj\Debug\SistemaFuncionarios.FormCadastro.resources

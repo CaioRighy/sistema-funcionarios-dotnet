@@ -14,6 +14,7 @@ namespace SistemaFuncionarios
         private Button btnSalvar, btnEditar, btnExcluir, btnCalcular;
 
         private TextBox txtNome, txtTelefone, txtRG, txtEndereco, txtSalario;
+        private Label lblNome, lblTelefone, lblRG, lblEndereco, lblSalario;
 
         private ComboBox cmbProfissionais;
         private NumericUpDown nudHorasExtras;
@@ -44,20 +45,21 @@ namespace SistemaFuncionarios
 
         private void CriarAbaCadastro()
         {
-            Label lblNome = new Label { Text = "Nome", Top = 20, Left = 20 };
+            lblNome = new Label { Text = "Nome", Top = 20, Left = 20 };
             txtNome = new TextBox { Top = 40, Left = 20, Width = 200 };
 
-            Label lblTelefone = new Label { Text = "Telefone", Top = 70, Left = 20 };
+            lblTelefone = new Label { Text = "Telefone", Top = 70, Left = 20 };
             txtTelefone = new TextBox { Top = 90, Left = 20, Width = 200 };
 
-            Label lblRG = new Label { Text = "RG", Top = 120, Left = 20 };
+            lblRG = new Label { Text = "RG", Top = 120, Left = 20 };
             txtRG = new TextBox { Top = 140, Left = 20, Width = 200 };
 
-            Label lblEndereco = new Label { Text = "Endereço", Top = 170, Left = 20 };
+            lblEndereco = new Label { Text = "Endereço", Top = 170, Left = 20 };
             txtEndereco = new TextBox { Top = 190, Left = 20, Width = 200 };
 
-            Label lblSalario = new Label { Text = "Salário", Top = 220, Left = 20 };
+            lblSalario = new Label { Text = "Salário", Top = 220, Left = 20 };
             txtSalario = new TextBox { Top = 240, Left = 20, Width = 200 };
+            txtSalario.KeyPress += txtSalario_KeyPress;
 
             btnSalvar = new Button { Text = "Salvar", Top = 280, Left = 20 };
             btnSalvar.Click += BtnSalvar_Click;
@@ -70,6 +72,7 @@ namespace SistemaFuncionarios
 
             dgvProfissionais = new DataGridView { Top = 320, Left = 20, Width = 720, Height = 180 };
             dgvProfissionais.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProfissionais.SelectionChanged += dgvProfissionais_SelectionChanged;
 
             tabCadastro.Controls.AddRange(new Control[] {
                 lblNome, txtNome, lblTelefone, txtTelefone,
@@ -154,11 +157,11 @@ namespace SistemaFuncionarios
         private void CarregarProfissionais()
         {
             dgvProfissionais.DataSource = db.Profissionais.ToList();
-            cmbProfissionais?.Items.Clear();
-            cmbProfissionais?.Items.AddRange(db.Profissionais.ToArray());
+            cmbProfissionais.Items.Clear();
+            cmbProfissionais.Items.AddRange(db.Profissionais.ToArray());
             cmbProfissionais.DisplayMember = "Nome";
 
-            if (cmbProfissionais != null && cmbProfissionais.Items.Count > 0)
+            if (cmbProfissionais.Items.Count > 0)
             {
                 cmbProfissionais.SelectedIndex = 0;
             }
@@ -180,6 +183,33 @@ namespace SistemaFuncionarios
                             "Erro de formato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             salario = 0;
             return false;
+        }
+
+        private void dgvProfissionais_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvProfissionais.SelectedRows.Count > 0)
+            {
+                int id = (int)dgvProfissionais.SelectedRows[0].Cells[0].Value;
+                var profissional = db.Profissionais.Find(id);
+
+                txtNome.Text = profissional.Nome;
+                txtTelefone.Text = profissional.Telefone;
+                txtRG.Text = profissional.RG;
+                txtEndereco.Text = profissional.Endereco;
+                txtSalario.Text = profissional.Salario.ToString("N2", new System.Globalization.CultureInfo("pt-BR"));
+            }
+        }
+
+        private void txtSalario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == ',' && txtSalario.Text.Contains(","))
+            {
+                e.Handled = true;
+            }
         }
 
         private void CmbProfissionais_SelectedIndexChanged(object sender, EventArgs e)

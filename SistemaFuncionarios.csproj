@@ -57,6 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
+    <Compile Include="FormCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastro.Designer.cs">
+      <DependentUpon>FormCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="Profissional.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCadastro.resx">
+      <DependentUpon>FormCadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
