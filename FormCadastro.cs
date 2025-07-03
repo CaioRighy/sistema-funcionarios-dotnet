@@ -147,5 +147,20 @@ namespace SistemaFuncionarios
                 txtTotalHoraExtra.Text = "Erro no cálculo.";
             }
         }
+
+        
+private void cmbFuncionario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFuncionario.SelectedItem != null)
+            {
+                var funcionario = cmbFuncionario.SelectedItem as Profissional;
+                if (funcionario != null)
+                {
+                    txtSalarioAtual.Text = funcionario.Salario.ToString("C");
+                }
+            }
+        }
+
     }
 }
+

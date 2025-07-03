@@ -290,6 +290,7 @@
             this.cmbFuncionario.Name = "cmbFuncionario";
             this.cmbFuncionario.Size = new System.Drawing.Size(121, 21);
             this.cmbFuncionario.TabIndex = 7;
+            this.cmbFuncionario.SelectedIndexChanged += new System.EventHandler(this.cmbFuncionario_SelectedIndexChanged);
             // 
             // lblFuncionario
             // 
